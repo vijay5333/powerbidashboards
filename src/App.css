@@ -1,19 +1,30 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Global Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
 }
+
+/* Header */
 header {
   background-color: #333;
   color: white;
   padding: 15px;
   text-align: center;
 }
+
+/* Navigation Styles */
 nav {
   background-color: #444;
   overflow: hidden;
 }
+
 nav a {
   color: white;
   padding: 14px 20px;
@@ -21,18 +32,82 @@ nav a {
   display: inline-block;
   text-align: center;
 }
+
 nav a:hover {
   background-color: #575757;
 }
+
+/* Main Menu (for IINF, RA-SABAl, HDFC) */
+.main-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu-item {
+  position: relative; /* Necessary for submenu positioning */
+}
+
+.menu-link {
+  color: white;
+  padding: 14px 20px;
+  display: block;
+  text-align: center;
+}
+
+.menu-link:hover {
+  background-color: #575757;
+}
+
+/* Submenu Styles (for IINF dropdown) */
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  display: none;
+  min-width: 200px;
+  z-index: 10; /* Ensure the submenu appears above other content */
+}
+
+.submenu li a {
+  color: white;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  background-color: #575757;
+}
+
+/* Display Submenu on Hover */
+.menu-item:hover .submenu {
+  display: block;
+}
+
+/* Active Link Highlighting */
+.active-link {
+  background-color: #007bff;
+}
+
+/* Container Styles (for displaying content) */
 .container {
   display: none;
   padding: 20px;
 }
+
 .container iframe {
   width: 100%;
   height: 600px;
   border: none;
 }
+
+/* Active Content Display */
 .active {
   display: block;
 }
