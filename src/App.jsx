@@ -71,7 +71,7 @@ const App = () => {
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">RA-SABAl</a>
+                <a className="nav-link" href="#">RA-SABAL</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">HDFC</a>
