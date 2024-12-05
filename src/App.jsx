@@ -1,296 +1,294 @@
 import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { FaChevronDown } from "react-icons/fa"; // Add the icons for dropdown
 
 const App = () => {
-  const [activeSection, setActiveSection] = useState("fisheries");
+  const [activeCategory, setActiveCategory] = useState(null); // Track the active category (IINF, RA-SABAL, or HDFC)
+  const [activeSection, setActiveSection] = useState(null); // Track the selected section (for iframes)
+  const [selectedButton, setSelectedButton] = useState(null); // Track selected button for effect
 
-  const handleNavClick = (sectionId) => {
-    setActiveSection(sectionId);
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category === activeCategory ? null : category); // Toggle category
+  };
+
+  const handleNavClick = (sectionId, buttonId) => {
+    setActiveSection(sectionId); // Set the active section for the iframe
+    setSelectedButton(buttonId); // Set the selected button for effect
+  };
+
+  const renderIframe = (sectionId) => {
+    // Return iframe based on the selected section
+    switch (sectionId) {
+      case "fisheries":
+        return (
+          <iframe
+            title="Fisheries_2024-25"
+            src="https://app.powerbi.com/view?r=eyJrIjoiNjgzNGUyZDEtYTFhMi00Y2E3LTg4YTAtZTFhYzAwZWMxYzUzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      case "crop_models":
+        return (
+          <iframe
+            title="Crop_models"
+            src="https://app.powerbi.com/view?r=eyJrIjoiMzhjMDg4NTktYTU5Zi00NmZjLWJlZTUtNDU5YTM1NDJhZDFmIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      case "coffee_plots":
+        return (
+          <iframe
+            title="Coffee_Plots_ASR"
+            src="https://app.powerbi.com/view?r=eyJrIjoiOWY1NGRjYzYtZGNiYS00MGRkLWE5OWMtMmU3ZjZmZDcxMjVmIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      case "paddy_dehullers":
+        return (
+          <iframe
+            title="Paddy Dehullers_NC"
+            src="https://app.powerbi.com/view?r=eyJrIjoiYzY1NWEyYTMtOTYwNC00ZWQ2LTg3NGEtM2NmMWVhYzUxN2QzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      case "motorized_pulper":
+        return (
+          <iframe
+            title="Motorized coffee pulper"
+            src="https://app.powerbi.com/view?r=eyJrIjoiMmVlNzc5YTktMTE3My00ZDAzLWI4MWYtNWYxMjViMTE2MjFmIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9&pageName=ReportSection"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      case "pmds":
+        return (
+          <iframe
+            title="PMDS and Kitchen garden_SABAL"
+            src="https://app.powerbi.com/view?r=eyJrIjoiMzhjMDg4NTktYTU5Zi00NmZjLWJlZTUtNDU5YTM1NDJhZDFmIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      case "coffee_plot_intensification":
+        return (
+          <iframe
+            title="Coffee Plot Intensification"
+            src="https://app.powerbi.com/view?r=eyJrIjoiODk3ZGI1N2EtMzdmMS00YWJlLWEzODQtZTA1Y2JlNTk4MDI2IiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      case "capacity_building":
+        return (
+          <iframe
+            title="Capacity Building_SABAL"
+            src="https://app.powerbi.com/view?r=eyJrIjoiOGMyZjkyYzctZWU4Ni00OTJkLTg3MDgtMzdjYTYwNWJmZTk1IiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      case "rainfed_fisheries":
+        return (
+          <iframe
+            title="Rainfed Fisheries"
+            src="https://app.powerbi.com/view?r=eyJrIjoiNjgzNGUyZDEtYTFhMi00Y2E3LTg4YTAtZTFhYzAwZWMxYzUzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      default:
+        return null;
+    }
   };
 
   return (
-    <>
-      <header className="bg-secondary text-white text-center py-3">
-        <h1>Wassan Northcoast Dashboards</h1>
-      </header>
+    <div className="d-flex">
+      {/* Sidebar */}
+      <div
+        className="bg-light p-3"
+        style={{
+          width: "250px",
+          height: "100vh",
+          borderRight: "2px solid #ddd",
+        }}
+      >
+        <h4>Wassan Northcoast Dashboards</h4>
 
-      {/* Bootstrap Nav Menu */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              {/* IINF Dropdown */}
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownIINF"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+        {/* IINF Dropdown */}
+        <div className="mb-3">
+          <button
+            className={`btn w-100 text-start d-flex justify-content-between align-items-center ${
+              activeCategory === "IINF" ? "bg-primary text-white" : ""
+            }`}
+            onClick={() => handleCategoryClick("IINF")}
+          >
+            IINF <FaChevronDown className="ml-2" />
+          </button>
+          {activeCategory === "IINF" && (
+            <ul className="list-unstyled pl-3 mt-2">
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "fisheries"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() => handleNavClick("fisheries", "fisheries")}
                 >
-                  IINF
-                </a>
-                <ul
-                  className="dropdown-menu"
-                  aria-labelledby="navbarDropdownIINF"
-                >
-                  <li>
-                    <a
-                      href="#fisheries"
-                      onClick={() => handleNavClick("fisheries")}
-                      className={`dropdown-item ${
-                        activeSection === "fisheries" ? "active" : ""
-                      }`}
-                    >
-                      Fisheries Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#crop_models"
-                      onClick={() => handleNavClick("crop_models")}
-                      className={`dropdown-item ${
-                        activeSection === "crop_models" ? "active" : ""
-                      }`}
-                    >
-                      Crop Models
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#coffee_plots"
-                      onClick={() => handleNavClick("coffee_plots")}
-                      className={`dropdown-item ${
-                        activeSection === "coffee_plots" ? "active" : ""
-                      }`}
-                    >
-                      Coffee Plots
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#paddy_dehullers"
-                      onClick={() => handleNavClick("paddy_dehullers")}
-                      className={`dropdown-item ${
-                        activeSection === "paddy_dehullers" ? "active" : ""
-                      }`}
-                    >
-                      Paddy Dehullers
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#motorized_pulper"
-                      onClick={() => handleNavClick("motorized_pulper")}
-                      className={`dropdown-item ${
-                        activeSection === "motorized_pulper" ? "active" : ""
-                      }`}
-                    >
-                      Motorized Coffee Pulper
-                    </a>
-                  </li>
-                </ul>
+                  Fisheries Dashboard
+                </button>
               </li>
-
-              {/* RA-SABAL Dropdown */}
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownRASABAL"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "crop_models"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() => handleNavClick("crop_models", "crop_models")}
                 >
-                  RA-SABAL
-                </a>
-                <ul
-                  className="dropdown-menu"
-                  aria-labelledby="navbarDropdownRASABAL"
-                >
-                  <li>
-                    <a
-                      href="#pmds"
-                      onClick={() => handleNavClick("pmds")}
-                      className={`dropdown-item ${
-                        activeSection === "pmds" ? "active" : ""
-                      }`}
-                    >
-                      PMDS and Kitchen garden_SABAL
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#coffee_plot_intensification"
-                      onClick={() =>
-                        handleNavClick("coffee_plot_intensification")
-                      }
-                      className={`dropdown-item ${
-                        activeSection === "coffee_plot_intensification"
-                          ? "active"
-                          : ""
-                      }`}
-                    >
-                      Coffee plot intensification_SABAL
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#capacity_building"
-                      onClick={() => handleNavClick("capacity_building")}
-                      className={`dropdown-item ${
-                        activeSection === "capacity_building" ? "active" : ""
-                      }`}
-                    >
-                      Capacity Building_SABAL
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#rainfed_fisheries"
-                      onClick={() => handleNavClick("rainfed_fisheries")}
-                      className={`dropdown-item ${
-                        activeSection === "rainfed_fisheries" ? "active" : ""
-                      }`}
-                    >
-                      Rainfed Fisheries_SABAL
-                    </a>
-                  </li>
-                </ul>
+                  Crop Models
+                </button>
               </li>
-
-              {/* HDFC Nav Item */}
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  HDFC
-                </a>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "coffee_plots"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() => handleNavClick("coffee_plots", "coffee_plots")}
+                >
+                  Coffee Plots
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "paddy_dehullers"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick("paddy_dehullers", "paddy_dehullers")
+                  }
+                >
+                  Paddy Dehullers
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "motorized_pulper"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick("motorized_pulper", "motorized_pulper")
+                  }
+                >
+                  Motorized Coffee Pulper
+                </button>
               </li>
             </ul>
-          </div>
+          )}
         </div>
-      </nav>
 
-      {/* Sections for iframes */}
-      <div
-        className={`container mt-3 ${
-          activeSection === "fisheries" ? "active" : "inactive"
-        }`}
-      >
-        <iframe
-          title="Fisheries_2024-25"
-          src="https://app.powerbi.com/view?r=eyJrIjoiNjgzNGUyZDEtYTFhMi00Y2E3LTg4YTAtZTFhYzAwZWMxYzUzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
-          className="w-100"
-          height="600px"
-        ></iframe>
+        {/* Line Divider for IINF */}
+        <div style={{ borderTop: "2px solid #ddd" }}></div>
+
+        {/* RA-SABAL Dropdown */}
+        <div className="mb-3">
+          <button
+            className={`btn w-100 text-start d-flex justify-content-between align-items-center ${
+              activeCategory === "RA-SABAL" ? "bg-primary text-white" : ""
+            }`}
+            onClick={() => handleCategoryClick("RA-SABAL")}
+          >
+            RA-SABAL <FaChevronDown className="ml-2" />
+          </button>
+          {activeCategory === "RA-SABAL" && (
+            <ul className="list-unstyled pl-3 mt-2">
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "pmds" ? "bg-success text-white" : ""
+                  }`}
+                  onClick={() => handleNavClick("pmds", "pmds")}
+                >
+                  PMDS and Kitchen Garden
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "coffee_plot_intensification"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick(
+                      "coffee_plot_intensification",
+                      "coffee_plot_intensification"
+                    )
+                  }
+                >
+                  Coffee Plot Intensification
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "capacity_building"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick("capacity_building", "capacity_building")
+                  }
+                >
+                  Capacity Building
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "rainfed_fisheries"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick("rainfed_fisheries", "rainfed_fisheries")
+                  }
+                >
+                  Rainfed Fisheries
+                </button>
+              </li>
+            </ul>
+          )}
+        </div>
+
+        {/* Line Divider for RA-SABAL */}
+        <div style={{ borderTop: "2px solid #ddd" }}></div>
+
+        {/* HDFC Section */}
+        <div className="mb-3">
+          <button
+            className={`btn w-100 text-start `}
+            onClick={() => handleNavClick("hdfc", "hdfc")}
+          >
+            HDFC
+          </button>
+        </div>
       </div>
 
-      <div
-        className={`container mt-3 ${
-          activeSection === "crop_models" ? "active" : "inactive"
-        }`}
-      >
-        <iframe
-          title="Crop_models"
-          src="https://app.powerbi.com/view?r=eyJrIjoiMzhjMDg4NTktYTU5Zi00NmZjLWJlZTUtNDU5YTM1NDJhZDFmIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
-          className="w-100"
-          height="600px"
-        ></iframe>
-      </div>
-
-      <div
-        className={`container mt-3 ${
-          activeSection === "coffee_plots" ? "active" : "inactive"
-        }`}
-      >
-        <iframe
-          title="Coffee_Plots_ASR"
-          src="https://app.powerbi.com/view?r=eyJrIjoiOWY1NGRjYzYtZGNiYS00MGRkLWE5OWMtMmU3ZjZmZDcxMjVmIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
-          className="w-100"
-          height="600px"
-        ></iframe>
-      </div>
-
-      <div
-        className={`container mt-3 ${
-          activeSection === "paddy_dehullers" ? "active" : "inactive"
-        }`}
-      >
-        <iframe
-          title="Paddy Dehullers_NC"
-          src="https://app.powerbi.com/view?r=eyJrIjoiYzY1NWEyYTMtOTYwNC00ZWQ2LTg3NGEtM2NmMWVhYzUxN2QzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
-          className="w-100"
-          height="600px"
-        ></iframe>
-      </div>
-
-      <div
-        className={`container mt-3 ${
-          activeSection === "motorized_pulper" ? "active" : "inactive"
-        }`}
-      >
-        <iframe
-          title="Motorized coffee pulper"
-          src="https://app.powerbi.com/view?r=eyJrIjoiMmVlNzc5YTktMTE3My00ZDAzLWI4MWYtNWYxMjViMTE2MjFmIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9&pageName=ReportSection"
-          className="w-100"
-          height="600px"
-        ></iframe>
-      </div>
-
-      {/* RA-SABAL Sections */}
-      <div
-        className={`container mt-3 ${
-          activeSection === "pmds" ? "active" : "inactive"
-        }`}
-      >
-        <iframe
-          title="Crop_models-SABAL"
-          className="w-100"
-          height="600px"
-          src="https://app.powerbi.com/view?r=eyJrIjoiMzhjMDg4NTktYTU5Zi00NmZjLWJlZTUtNDU5YTM1NDJhZDFmIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
-        ></iframe>
-      </div>
-
-      <div
-        className={`container mt-3 ${
-          activeSection === "coffee_plot_intensification"
-            ? "active"
-            : "inactive"
-        }`}
-      >
-        <iframe
-          title="Crop models_PMDS"
-          src="https://app.powerbi.com/view?r=eyJrIjoiODk3ZGI1N2EtMzdmMS00YWJlLWEzODQtZTA1Y2JlNTk4MDI2IiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
-          className="w-100"
-          height="600px"
-        ></iframe>
-      </div>
-
-      <div
-        className={`container mt-3 ${
-          activeSection === "capacity_building" ? "active" : "inactive"
-        }`}
-      >
-        <iframe
-          title="Capacity Building_RA"
-          src="https://app.powerbi.com/view?r=eyJrIjoiOGMyZjkyYzctZWU4Ni00OTJkLTg3MDgtMzdjYTYwNWJmZTk1IiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
-          className="w-100"
-          height="600px"
-        ></iframe>
-      </div>
-
-      <div
-        className={`container mt-3 ${
-          activeSection === "rainfed_fisheries" ? "active" : "inactive"
-        }`}
-      >
-        <iframe
-          title="Fisheries_2024-25"
-          src="https://app.powerbi.com/view?r=eyJrIjoiNjgzNGUyZDEtYTFhMi00Y2E3LTg4YTAtZTFhYzAwZWMxYzUzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
-          className="w-100"
-          height="600px"
-        ></iframe>
-      </div>
-    </>
+      {/* Main Content */}
+      <div className="p-3 flex-grow-1">{renderIframe(activeSection)}</div>
+    </div>
   );
 };
 
