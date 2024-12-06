@@ -100,6 +100,15 @@ const App = () => {
             height="700px"
           ></iframe>
         );
+      case "poultry_challenge_fund":
+        return (
+          <iframe
+            title="Poultry Challenge Fund"
+            src="https://app.powerbi.com/view?r=eyJrIjoiOGEyODU0MjAtYTZkMS00NWM3LTg0YWQtM2E1YjRmYmRlMzkzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
       default:
         return null;
     }
@@ -109,17 +118,27 @@ const App = () => {
     <div className="d-flex">
       {/* Sidebar */}
       <div
-        className="bg-light p-3"
         style={{
+          backgroundColor: "transparent",
           width: "250px",
           height: "100vh",
           borderRight: "2px solid #ddd",
         }}
       >
-        <h4>Wassan Northcoast Dashboards</h4>
+        <h5
+          style={{
+            backgroundColor: "#497482",
+            padding: "15px",
+            textAlign: "center",
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+            color: "#fff",
+          }}
+        >
+          Wassan Northcoast Dashboards
+        </h5>
 
         {/* IINF Dropdown */}
-        <div className="mb-3">
+        <div>
           <button
             className={`btn w-100 text-start d-flex justify-content-between align-items-center ${
               activeCategory === "IINF" ? "bg-primary text-white" : ""
@@ -202,7 +221,7 @@ const App = () => {
         <div style={{ borderTop: "2px solid #ddd" }}></div>
 
         {/* RA-SABAL Dropdown */}
-        <div className="mb-3">
+        <div>
           <button
             className={`btn w-100 text-start d-flex justify-content-between align-items-center ${
               activeCategory === "RA-SABAL" ? "bg-primary text-white" : ""
@@ -275,10 +294,22 @@ const App = () => {
         {/* Line Divider for RA-SABAL */}
         <div style={{ borderTop: "2px solid #ddd" }}></div>
 
+        {/* Poultry Challenge Fund Button */}
+        <div>
+          <button
+            className={`btn w-100 text-start`}
+            onClick={() =>
+              handleNavClick("poultry_challenge_fund", "poultry_challenge_fund")
+            }
+          >
+            Poultry Challenge Fund
+          </button>
+        </div>
+        <div style={{ borderTop: "2px solid #ddd" }}></div>
         {/* HDFC Section */}
         <div className="mb-3">
           <button
-            className={`btn w-100 text-start `}
+            className={`btn w-100 text-start`}
             onClick={() => handleNavClick("hdfc", "hdfc")}
           >
             HDFC
