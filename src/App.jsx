@@ -32,7 +32,7 @@ const App = () => {
         return (
           <iframe
             title="Crop_models"
-            src="https://app.powerbi.com/view?r=eyJrIjoiMzhjMDg4NTktYTU5Zi00NmZjLWJlZTUtNDU5YTM1NDJhZDFmIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            src="https://app.powerbi.com/view?r=eyJrIjoiM2ZkNzBhMWEtYTVjYS00Y2MxLWFmOGItYjk0ZjliZWU5YjUxIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
             className="w-100"
             height="700px"
           ></iframe>
@@ -104,7 +104,7 @@ const App = () => {
         return (
           <iframe
             title="Poultry Challenge Fund"
-            src="https://app.powerbi.com/view?r=eyJrIjoiOGEyODU0MjAtYTZkMS00NWM3LTg0YWQtM2E1YjRmYmRlMzkzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            src="https://app.powerbi.com/reportEmbed?reportId=0caf354d-4a5f-4bce-80fd-f40671522543&autoAuth=true&ctid=495362a7-4122-4448-b4e6-21c43e4bf4fd"
             className="w-100"
             height="700px"
           ></iframe>
