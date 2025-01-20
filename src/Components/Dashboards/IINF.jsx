@@ -10,6 +10,7 @@ const IINFPage = ({ selectedButton, handleNavClick }) => {
 
   return (
     <div>
+      {/* Category Button for IINF */}
       <button
         className={`btn w-100 text-start d-flex justify-content-between align-items-center ${
           selectedButton === "IINF" ? "bg-primary text-white" : ""
@@ -18,16 +19,20 @@ const IINFPage = ({ selectedButton, handleNavClick }) => {
       >
         IINF <FaChevronDown />
       </button>
+
+      {/* Dropdown Menu */}
       {isOpen && ( // Only show the dropdown when isOpen is true
         <ul className="list-unstyled pl-3 mt-2">
           <li>
             <button
               className={`btn w-100 text-start ${
-                selectedButton === "fisheries" ? "bg-success text-white" : ""
+                selectedButton === "bio_resource_centers" ? "bg-success text-white" : ""
               }`}
-              onClick={() => handleNavClick("fisheries", "fisheries")}
+              onClick={() =>
+                handleNavClick("bio_resource_centers", "bio_resource_centers")
+              }
             >
-              Fisheries Dashboard
+              Bio Resource Centers
             </button>
           </li>
           <li>
@@ -43,11 +48,13 @@ const IINFPage = ({ selectedButton, handleNavClick }) => {
           <li>
             <button
               className={`btn w-100 text-start ${
-                selectedButton === "coffee_plots" ? "bg-success text-white" : ""
+                selectedButton === "rainfed_fisheries" ? "bg-success text-white" : ""
               }`}
-              onClick={() => handleNavClick("coffee_plots", "coffee_plots")}
+              onClick={() =>
+                handleNavClick("rainfed_fisheries", "rainfed_fisheries")
+              }
             >
-              Coffee Plots
+              Rainfed Fisheries
             </button>
           </li>
         </ul>
