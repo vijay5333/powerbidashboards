@@ -71,7 +71,7 @@ const App = () => {
         return (
           <iframe
             title="Capacity Building_SABAL"
-            src="https://app.powerbi.com/view?r=eyJrIjoiM2ZkNzBhMWEtYTVjYS00Y2MxLWFmOGItYjk0ZjliZWU5YjUxIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"            className="w-100"
+            src="https://app.powerbi.com/view?r=eyJrIjoiMjk4OTUxMGUtYjBjMS00YWEyLWEwZmUtMTVkNGI0M2EwZWQxIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"                        className="w-100"
             height="700px"
           ></iframe>
         );
