@@ -19,7 +19,9 @@ const App = () => {
   const renderIframe = (sectionId) => {
     // Return iframe based on the selected section
 
-     {/* IINF Secton Links */}
+    {
+      /* IINF Secton Links */
+    }
     switch (sectionId) {
       case "bio_resource_centers":
         return (
@@ -49,43 +51,7 @@ const App = () => {
           ></iframe>
         );
 
-       /* Bio Resource Centers Secton Links */
-
-      case "bio_resource_centers_sabal":
-        return (
-          <iframe
-            title="PMDS and Kitchen garden_SABAL"
-            src="https://app.powerbi.com/view?r=eyJrIjoiN2QwYzdhMGItMzQ3OS00NzE4LWI2NzQtZWQzY2JiZjFmNDllIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"            className="w-100"
-            height="700px"
-          ></iframe>
-        );
-      case "coffee_orchards":
-        return (
-          <iframe
-            title="Coffee Plot Intensification"
-            src="https://app.powerbi.com/view?r=eyJrIjoiOTNjZDI5NzktYWJiMS00ZmUxLWE4ZWEtZDE0MjQzYWY3MzQzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"            className="w-100"
-            height="700px"
-          ></iframe>
-        );
-      case "nf_models":
-        return (
-          <iframe
-            title="Capacity Building_SABAL"
-            src="https://app.powerbi.com/view?r=eyJrIjoiMjk4OTUxMGUtYjBjMS00YWEyLWEwZmUtMTVkNGI0M2EwZWQxIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"                        className="w-100"
-            height="700px"
-          ></iframe>
-        );
-      case "rainfed_fisheries_sabal":
-        return (
-          <iframe
-            title="Rainfed Fisheries"
-            src="https://app.powerbi.com/view?r=eyJrIjoiNWNhODVkZGMtNzE4MC00YjQyLTgwMWQtMGVjMWViYjYyYTVlIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"            className="w-100"
-            height="700px"
-          ></iframe>
-        );
-
-
-         /* BYP Challenge Fund Secton Links */
+      /* BYP Challenge Fund Secton Links */
       case "byp_challenge_fund":
         return (
           <iframe
@@ -95,6 +61,57 @@ const App = () => {
             height="700px"
           ></iframe>
         );
+
+      /* Bio Resource Centers Secton Links */
+
+      case "bio_resource_centers_sabal":
+        return (
+          <iframe
+            title="PMDS and Kitchen garden_SABAL"
+            src="https://app.powerbi.com/view?r=eyJrIjoiN2QwYzdhMGItMzQ3OS00NzE4LWI2NzQtZWQzY2JiZjFmNDllIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      case "coffee_orchards":
+        return (
+          <iframe
+            title="Coffee Plot Intensification"
+            src="https://app.powerbi.com/view?r=eyJrIjoiOTNjZDI5NzktYWJiMS00ZmUxLWE4ZWEtZDE0MjQzYWY3MzQzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      case "nf_models":
+        return (
+          <iframe
+            title="Capacity Building_SABAL"
+            src="https://app.powerbi.com/view?r=eyJrIjoiMjk4OTUxMGUtYjBjMS00YWEyLWEwZmUtMTVkNGI0M2EwZWQxIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+      case "rainfed_fisheries_sabal":
+        return (
+          <iframe
+            title="Rainfed Fisheries"
+            src="https://app.powerbi.com/view?r=eyJrIjoiNWNhODVkZGMtNzE4MC00YjQyLTgwMWQtMGVjMWViYjYyYTVlIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+
+      /* RRR Links */
+      case "rrr":
+        return (
+          <iframe
+            title="RRR"
+            src="https://app.powerbi.com/view?r=eyJrIjoiNjYyOWY3ZDEtZjI0Zi00NDZiLWI2ZjEtN2QxNTNhMmNhODBhIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+
       default:
         return null;
     }
@@ -187,7 +204,6 @@ const App = () => {
 
         {/* / **************************************************** / */}
 
-
         {/* BYP Challenge Fund Button */}
         <div>
           <button
@@ -200,8 +216,7 @@ const App = () => {
           </button>
         </div>
         <div style={{ borderTop: "2px solid #ddd" }}></div>
-         {/* / **************************************************** / */}
-
+        {/* / **************************************************** / */}
 
         {/* RA-SABAL Dropdown */}
         <div>
@@ -218,9 +233,16 @@ const App = () => {
               <li>
                 <button
                   className={`btn w-100 text-start ${
-                    selectedButton === "bio_resource_centers_sabal" ? "bg-success text-white" : ""
+                    selectedButton === "bio_resource_centers_sabal"
+                      ? "bg-success text-white"
+                      : ""
                   }`}
-                  onClick={() => handleNavClick("bio_resource_centers_sabal", "bio_resource_centers_sabal")}
+                  onClick={() =>
+                    handleNavClick(
+                      "bio_resource_centers_sabal",
+                      "bio_resource_centers_sabal"
+                    )
+                  }
                 >
                   Bio Resource Centers{" "}
                 </button>
@@ -233,10 +255,7 @@ const App = () => {
                       : ""
                   }`}
                   onClick={() =>
-                    handleNavClick(
-                      "coffee_orchards",
-                      "coffee_orchards"
-                    )
+                    handleNavClick("coffee_orchards", "coffee_orchards")
                   }
                 >
                   Coffee Orchards{" "}
@@ -249,9 +268,7 @@ const App = () => {
                       ? "bg-success text-white"
                       : ""
                   }`}
-                  onClick={() =>
-                    handleNavClick("nf_models", "nf_models")
-                  }
+                  onClick={() => handleNavClick("nf_models", "nf_models")}
                 >
                   NF Models{" "}
                 </button>
@@ -264,7 +281,10 @@ const App = () => {
                       : ""
                   }`}
                   onClick={() =>
-                    handleNavClick("rainfed_fisheries_sabal", "rainfed_fisheries_sabal")
+                    handleNavClick(
+                      "rainfed_fisheries_sabal",
+                      "rainfed_fisheries_sabal"
+                    )
                   }
                 >
                   Rainfed Fisheries
@@ -275,8 +295,23 @@ const App = () => {
         </div>
         {/* Line Divider for RA-SABAL */}
         <div style={{ borderTop: "2px solid #ddd" }}></div>
+
+         {/* RRR  Button */}
+      <div>
+        <button
+          className={`btn w-100 text-start`}
+          onClick={() => handleNavClick("rrr", "rrr")}
+        >
+          RRR{" "}
+        </button>
+      </div>
+      <div style={{ borderTop: "2px solid #ddd" }}></div>
+      {/* / **************************************************** / */}
+
+
       </div>
 
+     
 
       {/* Main Content */}
       <div className="p-3 flex-grow-1">{renderIframe(activeSection)}</div>
