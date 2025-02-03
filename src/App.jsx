@@ -112,6 +112,77 @@ const App = () => {
           ></iframe>
         );
 
+      /* HDFC Parivartan Links */
+      case "backyard_poultry":
+        return (
+          <iframe
+            title="Backyard poultry"
+            src="https://app.powerbi.com/view?r=eyJrIjoiZTlhNjM0OTQtYjBjMi00Y2NjLTgwYjMtZDgxYTNlYWM1ZTIyIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+
+      case "hdfc_rainfed_fisheries":
+        return (
+          <iframe
+            title="Rainfed Fisheries "
+            src="https://app.powerbi.com/view?r=eyJrIjoiM2Q3Mjg3YzEtMjYxYy00M2NmLWE3MDctZDhkZjJlYTI3NTY5IiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+
+      case "processing_hubs":
+        return (
+          <iframe
+            title="Processing Hubs"
+            src="https://app.powerbi.com/view?r=eyJrIjoiZjEzYTE1NWYtMjE0NS00ZjY2LTg3ODgtZGY5ZDA5MTE0NTUzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+
+      case "hdfc_bio_resource_centers":
+        return (
+          <iframe
+            title="Bio Resource Centers"
+            src="https://app.powerbi.com/view?r=eyJrIjoiNjllYzAxYzItYmQwZi00ZWE3LTg1ZWUtNzA3ZGQ4OTEzYzExIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+
+      case "crop_diversity":
+        return (
+          <iframe
+            title="Crop Diversity"
+            src=""
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+
+      case "protective_irrigation":
+        return (
+          <iframe
+            title="Protective Irrigation"
+            src=""
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+
+      case "agri_service_centers":
+        return (
+          <iframe
+            title="Agri Service Centers"
+            src=""
+            className="w-100"
+            height="700px"
+          ></iframe>
+        );
+
       default:
         return null;
     }
@@ -296,23 +367,145 @@ const App = () => {
         {/* Line Divider for RA-SABAL */}
         <div style={{ borderTop: "2px solid #ddd" }}></div>
 
-         {/* RRR  Button */}
-      <div>
-        <button
-          className={`btn w-100 text-start`}
-          onClick={() => handleNavClick("rrr", "rrr")}
-        >
-          RRR{" "}
-        </button>
+        {/* RRR  Button */}
+        <div>
+          <button
+            className={`btn w-100 text-start`}
+            onClick={() => handleNavClick("rrr", "rrr")}
+          >
+            RRR{" "}
+          </button>
+        </div>
+        <div style={{ borderTop: "2px solid #ddd" }}></div>
+        {/* / **************************************************** / */}
+
+        {/* HDFC Parivartan Dropdown */}
+        <div>
+          <button
+            className={`btn w-100 text-start d-flex justify-content-between align-items-center ${
+              activeCategory === "HDFC Parivartan"
+                ? "bg-primary text-white"
+                : ""
+            }`}
+            onClick={() => handleCategoryClick("HDFC Parivartan")}
+          >
+            HDFC Parivartan <FaChevronDown className="ml-2" />
+          </button>
+          {activeCategory === "HDFC Parivartan" && (
+            <ul className="list-unstyled pl-3 mt-2">
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "backyard_poultry"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick("backyard_poultry", "backyard_poultry")
+                  }
+                >
+                  Backyard poultry
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "rainfed_fisheries"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick("rainfed_fisheries", "rainfed_fisheries")
+                  }
+                >
+                  Rainfed Fisheries
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "processing_hubs"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick("processing_hubs", "processing_hubs")
+                  }
+                >
+                  Processing Hubs
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "bio_resource_centers"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick(
+                      "bio_resource_centers",
+                      "bio_resource_centers"
+                    )
+                  }
+                >
+                  Bio Resource Centers
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "crop_diversity"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick("crop_diversity", "crop_diversity")
+                  }
+                >
+                  Crop Diversity
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "protective_irrigation"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick(
+                      "protective_irrigation",
+                      "protective_irrigation"
+                    )
+                  }
+                >
+                  Protective Irrigation
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`btn w-100 text-start ${
+                    selectedButton === "agri_service_centers"
+                      ? "bg-success text-white"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleNavClick(
+                      "agri_service_centers",
+                      "agri_service_centers"
+                    )
+                  }
+                >
+                  Agri Service Centers
+                </button>
+              </li>
+            </ul>
+          )}
+        </div>
+        {/* Line Divider for RA-SABAL */}
+        <div style={{ borderTop: "2px solid #ddd" }}></div>
       </div>
-      <div style={{ borderTop: "2px solid #ddd" }}></div>
-      {/* / **************************************************** / */}
-
-
-      </div>
-
-     
-
       {/* Main Content */}
       <div className="p-3 flex-grow-1">{renderIframe(activeSection)}</div>
     </div>
