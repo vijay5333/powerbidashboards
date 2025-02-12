@@ -27,7 +27,7 @@ const App = () => {
         return (
           <iframe
             title="bio_resource_centers"
-            src="https://app.powerbi.com/view?r=eyJrIjoiODJlMTljMjEtMGYyMC00YmM3LWFkZDgtMTA5ZmNlYjdjODVhIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            src="https://app.powerbi.com/view?r=eyJrIjoiZjZkMmUyNzQtMDE5NC00NGYzLTgzNDItZTVlMGIzN2E2YWUzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
             className="w-100"
             height="700px"
           ></iframe>
@@ -147,7 +147,7 @@ const App = () => {
         return (
           <iframe
             title="Bio Resource Centers"
-            src="https://app.powerbi.com/view?r=eyJrIjoiNjllYzAxYzItYmQwZi00ZWE3LTg1ZWUtNzA3ZGQ4OTEzYzExIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
+            src="https://app.powerbi.com/view?r=eyJrIjoiZjZkMmUyNzQtMDE5NC00NGYzLTgzNDItZTVlMGIzN2E2YWUzIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"
             className="w-100"
             height="700px"
           ></iframe>
