@@ -147,7 +147,8 @@ const App = () => {
         return (
           <iframe
             title="Bio Resource Centers"
-            src="https://app.powerbi.com/view?r=eyJrIjoiNjllYzAxYzItYmQwZi00ZWE3LTg1ZWUtNzA3ZGQ4OTEzYzExIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"            className="w-100"
+            src="https://app.powerbi.com/view?r=eyJrIjoiNjllYzAxYzItYmQwZi00ZWE3LTg1ZWUtNzA3ZGQ4OTEzYzExIiwidCI6IjQ5NTM2MmE3LTQxMjItNDQ0OC1iNGU2LTIxYzQzZTRiZjRmZCJ9"             
+         className="w-100"
             height="700px"
           ></iframe>
         );
@@ -437,14 +438,14 @@ const App = () => {
               <li>
                 <button
                   className={`btn w-100 text-start ${
-                    selectedButton === "bio_resource_centers"
+                    selectedButton === "hdfc_bio_resource_centers"
                       ? "bg-success text-white"
                       : ""
                   }`}
                   onClick={() =>
                     handleNavClick(
-                      "bio_resource_centers",
-                      "bio_resource_centers"
+                      "hdfc_bio_resource_centers",
+                      "hdfc_bio_resource_centers"
                     )
                   }
                 >
